@@ -30,7 +30,7 @@ nav { padding: 20px 0; background: var(--white); border-bottom: 1px solid #eee; 
 
 /* Hero */
 .hero { 
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1513245533418-29753ed5749c?auto=format&fit=crop&w=1500&q=80');
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('catoncouch.jfif');
     background-size: cover;
     background-position: center;
     color: white;
