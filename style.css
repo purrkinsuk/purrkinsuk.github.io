@@ -158,6 +158,29 @@ footer { background: var(--charcoal); color: var(--white); padding: 60px 0; }
     padding: 24px 0;
 }
 
+/* enquiry form inside footer */
+#enquiry-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0;
+}
+#enquiry-form label {
+    font-weight: 600;
+}
+#enquiry-form input,
+#enquiry-form select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+#enquiry-form button {
+    align-self: flex-start;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .split-grid, .footer-grid { grid-template-columns: 1fr; }

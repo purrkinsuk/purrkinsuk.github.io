@@ -115,8 +115,24 @@
             <div class="footer-text" style="text-align:center;">
                 <h3>Ready to give your cat a stress-free holiday?</h3>
                 <p>Contact me today to discuss your cat's specific needs.</p>
-                <p>📞 01234 567 890 | ✉️ <a href="mailto:hello@purrkins.com" style="color:inherit;text-decoration:underline;">hello@purrkins.com</a></p>
+                <p>📞 <a href="tel:07345576928" style="color:inherit;text-decoration:underline;">07345576928</a> | ✉️ <a href="mailto:hello@purrkins.com" style="color:inherit;text-decoration:underline;">hello@purrkins.com</a></p>
             </div>
+            <!-- enquiry form -->
+            <form id="enquiry-form" action="https://formspree.io/f/mojnbvqp" method="POST" onsubmit="setTimeout(()=>this.reset(),0)">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="Name" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="Phone" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="Email" required>
+
+                <label for="service">Service / Details</label>
+                <textarea id="service" name="Service" rows="4" required placeholder="Describe the service you need..."></textarea>
+
+                <button type="submit" class="btn-main">Send Enquiry</button>
+            </form>
         </div>
         <hr style="border: none; border-top: 1px solid #8da399; margin: 32px 0 16px 0; opacity: 0.3;">
         <div style="text-align:center; color:#ccc; font-size:0.95rem; padding-bottom:10px;">&copy; 2026 Purrkins Cat Sitting. All rights reserved.</div>
