@@ -12,9 +12,9 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purrkins Cat Sitting | Cats Are Happier at Home</title>
+    <title>Purrkins Cat Sitting</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Merriweather:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -38,13 +38,13 @@
         <div class="container hero-glass">
             <div class="hero-content">
                 <h1>Purrkins Cat Sitting</h1>
-                <p class="tagline">Cats Are Happier at Home</p>
+                <h2 class="tagline">Cats Are Happier at Home</h2>
                 <p>The ideal alternative to a cattery. Your cat remains relaxed, secure and comfortable in the place they know best.</p>
             </div>
         </div>
     </header>
 
-    <section id="about" class="container section">
+    <section id="about" class="container section card fade-in">
         <div class="split-grid">
             <div class="text-box">
                 <h2>Because home is where they feel safest</h2>
@@ -60,7 +60,7 @@
         </div>
     </section>
 
-    <section id="trust" class="container section">
+    <section id="trust" class="container section card fade-in">
         <div class="trust-content" style="max-width:700px;margin:0 auto;">
             <h2 style="color:var(--sage);font-size:2rem;margin-bottom:18px;">Professional &amp; Trusted</h2>
             <p style="font-size:1.15rem;margin-bottom:18px;">Hiring a cat sitter is about trust.</p>
@@ -78,7 +78,7 @@
         </div>
     </section>
 
-    <section id="experience" class="bg-cream section">
+    <section id="experience" class="bg-cream section fade-in">
         <div class="container text-center">
             <div class="promise-highlight">
                 <h2>The 30-Year Promise</h2>
@@ -88,7 +88,7 @@
         </div>
     </section>
 
-    <section id="services" class="container section">
+    <section id="services" class="container section card fade-in">
         <h2 class="text-center">Services</h2>
         <table>
             <thead>
@@ -128,6 +128,8 @@
             </div>
             <!-- enquiry form -->
             <form id="enquiry-form" action="https://formspree.io/f/mojnbvqp" method="POST" onsubmit="setTimeout(()=>this.reset(),0)">
+                <!-- confirmation message placeholder -->
+                <div id="form-message" class="form-message">Thank you! I’ll be in touch soon.</div>
                 <label for="name">Your Name</label>
                 <input type="text" id="name" name="Name" required>
 
@@ -147,5 +149,40 @@
         <div style="text-align:center; color:#ccc; font-size:0.95rem; padding-bottom:10px;">&copy; 2026 Purrkins Cat Sitting. All rights reserved.</div>
     </footer>
 
+    <script>
+        // scrollspy & fade-in on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+        const handleScroll = () => {
+            let current = '';
+            sections.forEach(section => {
+                const top = section.offsetTop - 120;
+                if(pageYOffset >= top) current = section.getAttribute('id');
+                // fade-in
+                if(section.classList.contains('fade-in')) {
+                    const rect = section.getBoundingClientRect();
+                    if(rect.top < window.innerHeight - 100) {
+                        section.classList.add('visible');
+                    }
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === '#' + current) link.classList.add('active');
+            });
+        };
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+
+        // form message handling
+        const form = document.getElementById('enquiry-form');
+        const msg = document.getElementById('form-message');
+        form.addEventListener('submit', () => {
+            setTimeout(() => {
+                msg.classList.add('visible');
+                setTimeout(()=>msg.classList.remove('visible'),5000);
+            }, 100);
+        });
+    </script>
 </body>
 </html>
